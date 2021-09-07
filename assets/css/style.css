@@ -1,7 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 header {
-  padding: 20px 35px;
-  background-color: var(--tertiary-color);
+  padding: 35px 35px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+header a {
+  text-decoration: none;
+  color: #cf85f1;
+  font-weight: bold;
+}
+
+header p {
+  font-weight: bold;
+}
+
+footer {
+  padding: 35px 20%;
+}
+
+#message {
+  display: none;
+  border-top: 2px solid Silver;
+  color: Silver;
+  line-height: 2;
+  text-indent: 1%;
+  font-size: 24px;
 }
