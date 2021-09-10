@@ -21,12 +21,60 @@ header a {
   font-weight: bold;
 }
 
+header a:hover {
+  color: #58448a;
+}
+
 header p {
   font-weight: bold;
 }
 
 footer {
   padding: 35px 20%;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 35px 20%;
+}
+
+main h1, main p {
+  text-align: center;
+}
+
+main ul li {
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav div {
+  margin: auto 0;
+}
+
+#scores {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 5%;
+}
+
+
+#scores .score:nth-child(even){
+  background-color: #cf85f1;
+  color: hsl(0, 0%, 0%);
+}
+
+#scores .score {
+  padding: 10px 60px;
+  font-size: 18px;
+  background-color: #58448a;
+  color: hsl(0, 0%, 100%);
 }
 
 #message {
@@ -37,3 +85,31 @@ footer {
   text-indent: 1%;
   font-size: 24px;
 }
+
+.btn {
+  border: none;
+  background-color: #351c75;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+.btn:hover {
+  background-color: #cf85f1;
+}
+
+.quiz.btn {
+  width: 260px;
+  text-align: start;
+}
+

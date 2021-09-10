@@ -12,9 +12,17 @@
 <body>
 
     <main>
+        <h1>High Scores</h1>
 
-        <button onclick="location.href = 'index.html'">Go back!</button>
-        <button>Clear High Scores</button>
+        <ul id="scores">
+        </ul>
+
+        <nav>
+            <button class="btn menu" onclick="location.href = 'index.html'">Go back!</button>
+            <button class="btn menu" onclick="refreshHighScores()">Refresh</button>
+            <button class="btn menu" onclick="clearHighScores()">Clear</button>
+        </nav>
+
     </main>
 
     <script src="assets/js/highscore.js"></script>
