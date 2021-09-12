@@ -1,14 +1,17 @@
 var scores = document.getElementById("scores");
 
+//on page load, refresh the score (display them)
 document.addEventListener("DOMContentLoaded", function () {
     refreshHighScores();
 });
 
+//clear the list of highscore by clearing the localStorage entry
 function clearHighScores(){
     scores.innerHTML = "";
     localStorage.removeItem("highScores");
 }
 
+//refresh the score (display them)
 function refreshHighScores(){
     scores.innerHTML = "";
     localStorage.highScores 

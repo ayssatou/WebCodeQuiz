@@ -1,15 +1,18 @@
+//ui element references
 var appQuiz = document.getElementById("app");
 var footerMessage = document.getElementById("message");
 var quizTimer = document.getElementById("timer");
 var highscoreInitials;
 
-var quizInterval;
-var quizState = 0;
-
-
+//dynamically created ui elements
 var StartQuizElement = document.createElement("div");
 var QuizQuestionElements = [];
 var SubmitScoreElement = document.createElement("div");
+
+//global variables for the quiz
+var quizInterval;
+var quizState = 0;
+
 
 document.addEventListener("DOMContentLoaded", function () {
   quizQuestions = [
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   appQuiz.appendChild(StartQuizElement);
 });
 
+//start the quiz. Set the state and the timer then show the first question
 function startQuiz(time) {
   var quizTime = parseInt(quizTimer.innerText);
   if (quizTime <= 0) {
@@ -51,6 +55,7 @@ function startQuiz(time) {
   }
 }
 
+//record the score, stop the timer and show the highscore recording part
 function finishQuiz(score) {
   clearInterval(quizInterval);
   appQuiz.innerHTML = "";
@@ -59,6 +64,7 @@ function finishQuiz(score) {
   highscoreInitials = document.getElementById("highscore-initials");
 }
 
+//if true the answer is correct, if false it is incorrect
 function submitAnswer(correct) {
   var quizTime = parseInt(quizTimer.innerText);
   if (!correct) {
@@ -77,6 +83,7 @@ function submitAnswer(correct) {
   }
 }
 
+//validate initials, add score and return to starting page
 function submitScore() {
   if (highscoreInitials.value.length !== 2) {
     displayMessage("Initials must be 2 characters!", 3000);
@@ -86,6 +93,7 @@ function submitScore() {
   resetQuiz();
 }
 
+//return to the starting page and reset the state and timer
 function resetQuiz(){
     quizTimer.innerText = 0;
     quizState = 0;
@@ -93,8 +101,8 @@ function resetQuiz(){
     appQuiz.appendChild(StartQuizElement);
 }
 
+//add the score to the highscores list
 function addHighScore(name, score) {
-  //todo validate parameters
   var highScores =
     localStorage.highScores && localStorage.highScores !== undefined
       ? JSON.parse(localStorage.highScores)
@@ -112,8 +120,8 @@ function addHighScore(name, score) {
   );
 }
 
+//display messages at the bottom of the screen for a defines amount of time
 function displayMessage(message, time) {
-  //todo validate parameters
   clearTimeout(this.footerMessageTimeout);
 
   this.footerMessageTimeout = setTimeout(function () {
